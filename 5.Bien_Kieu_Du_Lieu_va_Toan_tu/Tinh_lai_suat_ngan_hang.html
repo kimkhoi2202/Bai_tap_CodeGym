@@ -11,9 +11,10 @@
 </body>
 </html>
 <script>
-    let so_tien_vay = prompt("Nhập số tiền vay");
-    let lai_suat = prompt("Nhập lãi suất");
+    debugger;
+    let so_tien_vay = parseFloat(prompt("Nhập số tiền vay (triệu đồng"));
+    let lai_suat = parseFloat(prompt("Nhập lãi suất (%/năm)"));
     let nam = prompt("Nhập số năm");
-    let so_tien_phai_tra = so_tien_vay * (1 + lai_suat * nam);
-    document.write(so_tien_phai_tra.toFixed(1));
+    let so_tien_phai_tra = so_tien_vay * (1 + (lai_suat/100) * nam);
+    document.write(so_tien_phai_tra.toFixed(1) + " triệu đồng");
 </script>
