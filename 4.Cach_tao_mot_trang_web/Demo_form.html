@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Form</title>
+</head>
+<body>
+    <fieldset>
+        <form action="">
+            <legend>
+                <b>Họ và tên</b><br>
+                <input type="name">
+            </legend>
+            <legend>
+                <b>Email</b><br>
+                <input type="email">
+            </legend>
+            <legend>
+                <b>Số Điện Thoại</b><br>
+                <input type="numbe">
+            </legend>
+            <legend>
+                <b>Giới tính</b><br>
+                <input type="radio" name = "gender"><span>Nam</span>
+                <input type="radio" name = "gender"><span>Nữ</span>
+            </legend>
+            <legend>
+                <b>Tình trạng hôn nhân</b><br>
+                <input type="radio" name="marriage_status"><span>Độc thân</span>
+                <input type="radio" name="marriage_status"><span>Đã kết hôn</span>
+            </legend>
+            <legend>
+                <b>Sở thích</b><br>
+                <input type="checkbox" name="like"><span>Xem đá bóng</span>
+                <input type="checkbox" name="like"><span>Nghỉ học</span>
+                <input type="checkbox" name="like"><span>Giáo viên ốm</span>
+            </legend>
+            <legend>
+                <b>Sở đoản</b><br>
+                <input type="checkbox" name = "dislike"><span>Nấu ăn</span>
+                <input type="checkbox" name = "dislike"><span>Rửa bát</span>
+                <input type="checkbox" name = "dislike"><span>Quét nhà</span>
+            </legend>
+            <legend>
+                <b>Giới tính</b><br>
+                <select name="gender" id="Gender">
+                    <option value="">Nam</option>
+                    <option value="">Nữ</option>
+                    <option value="">Khác</option>
+                </select>
+            </legend>
+            <legend>
+                <b>Miêu tả người bạn yêu thích nhất</b><br>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </legend>
+            <button type="submit" onclick="check()">Nhap</button>
+        </form>
+    </fieldset>
+</body>
+</html>
+
+<script>
+    function check() {
+        let input1 = document.getElementById("Gender").value;
+        document.write(input1);
+    }
+</script>
