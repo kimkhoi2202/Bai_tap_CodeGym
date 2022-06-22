@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng máy tính bỏ túi</title>
+</head>
+<body>
+    <table style="width:15%" align="center">
+        <tr>
+            <td align="right" colspan="4"><span id="display"></span></td>
+        </tr>
+        <tr>
+            <td align="center"><button id="1" onclick="input_1()">1</button></td>
+            <td align="center"><button id="2" onclick="input_2()">2</button></td>
+            <td align="center"><button id="3" onclick="input_3()">3</button></td>
+            <td align="center"><button id="4 "onclick="sum()">+</button></td>
+        </tr>
+        <tr>
+            <td align="center"><button id="5" onclick="input_4()">4</button></td>
+            <td align="center"><button id="6" onclick="input_5()">5</button></td>
+            <td align="center"><button id="7" onclick="input_6()">6</button></td>
+            <td align="center"><button id="-" onclick="sub()">-</button></td>
+        </tr>
+        <tr>
+            <td align="center"><button id="7" onclick="input_7()">7</button></td>
+            <td align="center"><button id="8" onclick="input_8()">8</button></td>
+            <td align="center"><button id="9" onclick="input_9()">9</button></td>
+            <td align="center"><button id="x" onclick="mul()">x</button></td>
+        </tr>
+        <tr>
+            <td align="center"><button id="C" onclick="clear()">C</button></td>
+            <td align="center"><button id="0" onclick="input_0()">0</button></td>
+            <td align="center"><button id="output" onclick="output()">=</button></td>
+            <td align="center"><button id="/" onclick="div()">/</button></td>
+        </tr>
+    </table>
+
+    <fieldset>
+        <legend>Test Area</legend>
+        <p id="test"></p>
+    </fieldset>
+</body>
+</html>
+
+<script>
+    debugger
+    var choosecalculaton = true //If True, switch input to calculation 1, if False, switch input to calculation 2
+    var inputcalculation1 = ""
+    var inputcalculation2 = ""
+    var display = ""
+    var calculation = 0
+</script>
+
+<script src="Number_buttons.js"></script>
+<script src="Calculation_button.js"></script>
+<!-- <script src="Calculation_button_copy.js"></script> -->
