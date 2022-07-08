@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter password</title>
+</head>
+
+<script>
+    let count = 1
+</script>
+
+<body>
+    <fieldset>
+        <legend><p>Enter Password</p></legend>
+        <label for="">Enter password: </label><input type="text" id="password_input"><button type="submit" onclick="enterPassword()">Submit</button>
+    </fieldset>
+</body>
+</html>
+
+<script>
+    function enterPassword() {
+        let password = document.getElementById("password_input").value;
+        while (count <= 5) {
+            if (password == "12345") {
+                document.write("Login successfully!");
+                break;
+            } else {
+                alert("Nhập lại");
+                count++
+            }
+        }
+    }
+</script>

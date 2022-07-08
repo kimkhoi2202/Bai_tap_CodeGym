@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game đoán số</title>
+</head>
+<script>
+    let min_number = +prompt("Nhập số nhỏ nhất")
+    let max_number = +prompt("Nhập số lớn nhất")
+    let random_number = Math.floor(Math.random() * (max_number - min_number + 1)) + min_number
+</script>
+<body>
+    <label for="number">Đoán số: </label>
+    <input id="number" type="number">
+    <button id="submit_button" type="submit" onclick="submit_Button()">Submit</button>
+    <fieldset>
+        <legend><p>Đán án: </p></legend>
+        <p id="result"></p>
+    </fieldset>
+</body>
+</html>
+<script>
+    function submit_Button() {
+        let guess_number = +document.getElementById("number").value;
+        alert("Số ngẫu nhiên là " + random_number)
+        let display = "";
+        if (guess_number > random_number) {
+            display = "Lower";
+        } else if (guess_number < random_number) {
+            display = "Higher";
+        } else {
+            display = "Correct";
+        }
+        document.getElementById("result").innerHTML = display;
+    }
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let number = prompt("Nhập số:")
+    let result = ""
+    for (let count = 1; count <= number; count++) {
+        if (number < 1) {
+            result = "Không hợp lệ"
+        } else if (number == 1) {
+            result = "2"
+        } else {
+            result = "2"
+            let prime_number = 3
+            for (let i = 2; i < prime_number; i++) {
+                check = true
+                if (prime_number % i == 0) {
+                    check = false
+                    break
+                } else {
+                    check = true
+                }
+            }
+            if (check == true) {
+                result = result + ", " + prime_number
+            }
+        }
+    }
+    document.write(result)
+</script>
