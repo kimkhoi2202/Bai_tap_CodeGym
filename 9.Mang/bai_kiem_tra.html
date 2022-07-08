@@ -8,13 +8,14 @@
 </head>
 
 <script>
-    let count = 1
+    let count = 5
 </script>
 
 <body>
     <fieldset>
-        <legend><p>Enter Password</p></legend>
-        <label for="">Enter password: </label><input type="text" id="password_input"><button type="submit" onclick="enterPassword()">Submit</button>
+        <legend>Login</legend>
+        <label for="password_input">Enter password: </label><input type="text" id="password_input"><button type="submit" onclick="enterPassword()">Submit</button><br>
+        <span id="display"></span>
     </fieldset>
 </body>
 </html>
@@ -22,13 +23,16 @@
 <script>
     function enterPassword() {
         let password = document.getElementById("password_input").value;
-        while (count <= 5) {
-            if (password == "12345") {
-                document.write("Login successfully!");
-                break;
+        if (password === "12345") {
+            document.write("Login successfully!");
+        } else {
+            count--
+            if (count === 0) {
+                document.write("Too many attempts. You have been locked out.");
+            } else if (count === 1) {
+                document.getElementById("display").innerHTML = "Enter again - You have " + count + " attempt left.";
             } else {
-                alert("Nhập lại");
-                count++
+                document.getElementById("display").innerHTML = "Enter again - You have " + count + " attempts left.";
             }
         }
     }
