@@ -7,41 +7,45 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="">Click</button>
-    <button>Click</button>
-    <button>Click</button>
-    <button>Click</button>
-    <button>Click</button>
-    <br>
-
-    <button>Click</button>
-    <button>Click</button>
-    <button>Click</button>
-    <button>Click</button>
-    <button>Click</button>
-    <br>
-
-    <button>Click</button>
-    <button>Click</button>
-    <button>Click</button>
-    <button>Click</button>
-    <button>Click</button>
-    <br>
-
-    <button>Click</button>
-    <button>Click</button>
-    <button>Click</button>
-    <button>Click</button>
-    <button>Click</button>
-    <br>
-
-    <button>Click</button>
-    <button>Click</button>
-    <button>Click</button>
-    <button>Click</button>
-    <button>Click</button>
-    <br>
-
-    (button#1,${Click}*5+br)*5
-
+    <fieldset>
+        <label for="input">Nhập từ Tiếng Anh:</label>
+        <input id="input" type="text">
+        <button onclick="dich()">Dịch</button>
+        <p id="result"></p>
+    </fieldset>
+    <fieldset>
+        <h1>Từ điển</h1>
+        <p id="display_tu_dien"></p>
+    </fieldset>
+</body>
 </html>
+
+<script>
+    let tu_dien =
+    [["yellow", "vàng"],
+    ["red", "đỏ"],
+    ["orange", "cam"],
+    ["green", "xanh lá cây"],
+    ["blue", "xanh dương"],
+    ["purple", "tím"],
+    ["white", "trắng"],
+    ["black", "đen"]]
+    for (let i in tu_dien) {
+        display_tu_dien += tu_dien[i] + "</br>"
+    }
+    document.getElementById("display_tu_dien").innerHTML = display_tu_dien;
+
+    function dich() {
+        tu_tieng_anh = document.getElementById("input").value;
+        tu_tieng_anh = tu_tieng_anh;
+        for (let i in tu_dien) {
+            if (tu_tieng_anh == tu_dien[i][0]) {
+                tu_tieng_viet = " nghĩa là " + tu_dien[i][1]
+                break;
+            } else {
+                tu_tieng_viet = " chưa có trong từ điển"
+            }
+        }
+        document.getElementById("result").innerHTML = String(tu_tieng_anh + tu_tieng_viet)
+    }
+</script>
