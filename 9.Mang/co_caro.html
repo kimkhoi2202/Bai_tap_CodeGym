@@ -62,11 +62,12 @@
         positionX = +prompt("Nhập tọa độ x:");
         positionY = +prompt("Nhập tọa độ y: ");
         if (positionX > 4 || positionY > 4) {
-            alert("Tọa độ không hợp lệ, nhập lại:")
+            alert("Tọa độ không hợp lệ, nhập lại")
             play()
         }
 
-        if (board[positionX][positionY] === "[]") {
+        if (board[positionX][positionY] == "[]") {
+            alert(board[positionX][positionY])
             board[positionX][positionY] = dau
             turn = !turn;
             if (turn == true) {
