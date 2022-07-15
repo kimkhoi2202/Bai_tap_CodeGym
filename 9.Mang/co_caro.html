@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cờ Caro</title>
+</head>
+
+<body>
+    <div>
+        <span id="board_0"></span><br>
+        <span id="board_1"></span><br>
+        <span id="board_2"></span><br>
+        <span id="board_3"></span><br>
+        <span id="board_4"></span><br>
+    </div>
+    <br>
+    <div>
+        <button id="play_button" onclick="play()">Play as X</button><br>
+    </div>
+    <div>
+        <br>
+        <fieldset>
+            <legend>Chức năng:</legend>
+            <ul>
+                <li>Nhận biết tọa độ không hợp lệ (x hoặc y > 4)</li>
+                <li>Nhận biết vị trí đó đã được đánh</li>
+                <li>Biết được lượt chơi của X hay O</li>
+            </ul>
+        </fieldset>
+    </div>
+</body>
+</html>
+
+<script>
+    let turn, board, positionX, positionY, dau, kiem_tra_loi
+    dau = "" //Dau X hay O
+    turn = true //Luot cua X hay Y
+    kiem_tra_loi = [] //Neu nguoi dung danh mot cho 2 lan
+    board =
+    [["[]", "[]", "[]", "[]", "[]"],
+    ["[]", "[]", "[]", "[]", "[]"],
+    ["[]", "[]", "[]", "[]", "[]"],
+    ["[]", "[]", "[]", "[]", "[]"],
+    ["[]", "[]", "[]", "[]", "[]"]]
+
+    function in_Bang() {
+        for (let i in board) {
+            document.getElementById("board_" + i).innerHTML = board[i];
+        }
+    }
+    in_Bang()
+
+    function play() {
+        if (turn == true) {
+            dau = "X"
+        } else {
+            dau = "O"
+        }
+        
+        positionX = +prompt("Nhập tọa độ x:");
+        positionY = +prompt("Nhập tọa độ y: ");
+        if (positionX > 4 || positionY > 4) {
+            alert("Tọa độ không hợp lệ, nhập lại:")
+            play()
+        }
+
+        if (board[positionX][positionY] === "[]") {
+            board[positionX][positionY] = dau
+            turn = !turn;
+            if (turn == true) {
+                document.getElementById("play_button").innerHTML = "Play as X" 
+            } else {
+                document.getElementById("play_button").innerHTML = "Play as O"
+            }
+            in_Bang()
+        } else {
+            alert("Vị trí này đã được đánh")
+            play()
+        }
+    }
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhập và Tìm Kiếm Phần Tử</title>
+</head>
+<body>
+</body>
+</html>
+
+<script>
+    let mang = [];
+    let nhap_phan_tu = prompt("Nhập phần tử: ");
+    if (nhap_phan_tu != "q") {
+        while (true) {
+            if (nhap_phan_tu === "q") {
+                break;
+            }
+            mang.push(nhap_phan_tu);
+            nhap_phan_tu = prompt("Nhập phần tử: ");
+        }
+        document.write(mang + "</br>")
+    }
+
+    let phan_tu_can_tim = prompt("Tìm kiếm phần tử: ")
+    let thong_bao = ""
+    let flag = false;
+    for (elements in mang) {
+        if (phan_tu_can_tim == elements) {
+            flag = true
+            break
+        }
+    }
+    if (flag == true) {
+        thong_bao = "Phần tử này có trong mảng"
+    } else {
+        thong_bao = "Phần tử này không có trong mảng"
+    }
+    document.write(thong_bao)
+</script>
